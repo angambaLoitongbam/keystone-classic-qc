@@ -4,6 +4,7 @@ var grappling = require('grappling-hook');
 var path = require('path');
 var utils = require('keystone-utils');
 var importer = require('./lib/core/importer');
+const legacyPluralize = require('mongoose-legacy-pluralize');
 
 /**
  * Don't use process.cwd() as it breaks module encapsulation
@@ -106,7 +107,7 @@ Keystone.prototype.prefixModel = function (key) {
 		key = modelPrefix + '_' + key;
 	}
 
-	return require('mongoose/lib/utils').toCollectionName(key);
+	return require('mongoose/lib/utils').toCollectionName(key, legacyPluralize);
 };
 
 /* Attach core functionality to Keystone.prototype */
