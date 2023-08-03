@@ -4,7 +4,7 @@ var grappling = require('grappling-hook');
 var path = require('path');
 var utils = require('keystone-utils');
 var importer = require('./lib/core/importer');
-const legacyPluralize = require('mongoose-legacy-pluralize');
+const legacyPluralize = require('mongoose/lib/helpers/pluralize');
 
 /**
  * Don't use process.cwd() as it breaks module encapsulation
